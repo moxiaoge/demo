@@ -1,0 +1,32 @@
+<html>
+
+<script>
+    var clickAdd = function () {
+        var textArea = document.getElementById("textArea");
+        var d = new Date();
+        var x = document.getElementById("demo");
+        var count = document.getElementById("count").value;
+        var year = d.getFullYear(),
+            month = (d.getMonth() + 1),
+            day = d.getDate(),
+            hour = d
+            .getHours(),
+            minutes = d.getMinutes(),
+            seconds = d.getSeconds();
+        month = month < 10 ? '0' + month : month;
+        day = day < 10 ? '0' + day : day;
+        hour = hour < 10 ? '0' + hour : hour;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        textArea.innerHTML = textArea.innerHTML + year + '-' + month + '-' + day + ' ' + hour + ':' + minutes +
+            ':' + seconds + "  " + count + "<br/>";
+    }
+</script>
+<div>
+    <input type="text" id="count" />
+    <input type="button" id="submit" value="确定" onclick="clickAdd()">
+</div>
+<div id="textArea" style="width: 200px;height:400px;">
+</div>
+
+</html>
